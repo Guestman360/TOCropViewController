@@ -116,6 +116,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04D63DF920E324C0003E5B95 /* WheelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WheelProtocol.h; sourceTree = "<group>"; };
 		144B8CC91D22CAFF0085D774 /* TOCropViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TOCropViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		146EFFB51D243822006CE3A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15E30F151B47A2660099A975 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/TOCropViewControllerLocalizable.strings; sourceTree = "<group>"; };
@@ -234,9 +235,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04D63DF820E32483003E5B95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				04D63DF920E324C0003E5B95 /* WheelProtocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		144B8CCA1D22CAFF0085D774 /* TOCropViewController */ = {
 			isa = PBXGroup;
 			children = (
+				04D63DF820E32483003E5B95 /* Protocol */,
 				22DB4D881B234D07008B8466 /* Models */,
 				22DB4D8D1B234D07008B8466 /* Views */,
 				2238CF441FC02AE00081B957 /* TOCropViewController.h */,
