@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043419CB20E328A7005AB3E1 /* Wheel.h in Headers */ = {isa = PBXBuildFile; fileRef = 043419C920E328A7005AB3E1 /* Wheel.h */; };
+		043419CC20E328A7005AB3E1 /* Wheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 043419CA20E328A7005AB3E1 /* Wheel.m */; };
+		043419CF20E3291D005AB3E1 /* WheelSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 043419CD20E3291D005AB3E1 /* WheelSection.h */; };
+		043419D020E3291D005AB3E1 /* WheelSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 043419CE20E3291D005AB3E1 /* WheelSection.m */; };
 		144B8CD11D22CD650085D774 /* TOCropViewControllerTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB4D891B234D07008B8466 /* TOCropViewControllerTransitioning.h */; };
 		144B8CD21D22CD650085D774 /* TOActivityCroppedImageProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB4D9C1B234D4F008B8466 /* TOActivityCroppedImageProvider.h */; };
 		144B8CD31D22CD650085D774 /* TOCroppedImageAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BF961E1B2CD017009F4785 /* TOCroppedImageAttributes.h */; };
@@ -116,6 +120,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		043419C920E328A7005AB3E1 /* Wheel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wheel.h; sourceTree = "<group>"; };
+		043419CA20E328A7005AB3E1 /* Wheel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wheel.m; sourceTree = "<group>"; };
+		043419CD20E3291D005AB3E1 /* WheelSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WheelSection.h; sourceTree = "<group>"; };
+		043419CE20E3291D005AB3E1 /* WheelSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelSection.m; sourceTree = "<group>"; };
 		04D63DF920E324C0003E5B95 /* WheelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WheelProtocol.h; sourceTree = "<group>"; };
 		144B8CC91D22CAFF0085D774 /* TOCropViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TOCropViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		146EFFB51D243822006CE3A0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -254,6 +262,10 @@
 				22C3C5491AC8CA0D00E86280 /* TOCropViewControllerLocalizable.strings */,
 				2271B63D1DAAB59600AA147F /* TOCropViewController-Bridging-Header.h */,
 				146EFFB51D243822006CE3A0 /* Info.plist */,
+				043419C920E328A7005AB3E1 /* Wheel.h */,
+				043419CA20E328A7005AB3E1 /* Wheel.m */,
+				043419CD20E3291D005AB3E1 /* WheelSection.h */,
+				043419CE20E3291D005AB3E1 /* WheelSection.m */,
 			);
 			path = TOCropViewController;
 			sourceTree = "<group>";
@@ -437,6 +449,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043419CF20E3291D005AB3E1 /* WheelSection.h in Headers */,
+				043419CB20E328A7005AB3E1 /* Wheel.h in Headers */,
 				22B68FA81FFB3C1000601B1A /* CropViewController.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,10 +767,12 @@
 			files = (
 				22B68F9F1FFB3C0800601B1A /* TOCropViewControllerTransitioning.m in Sources */,
 				22B68FA01FFB3C0800601B1A /* TOActivityCroppedImageProvider.m in Sources */,
+				043419CC20E328A7005AB3E1 /* Wheel.m in Sources */,
 				22B68FA11FFB3C0800601B1A /* TOCroppedImageAttributes.m in Sources */,
 				22B68FA21FFB3C0800601B1A /* UIImage+CropRotate.m in Sources */,
 				22B68FA31FFB3C0800601B1A /* TOCropOverlayView.m in Sources */,
 				22B68FA41FFB3C0800601B1A /* TOCropScrollView.m in Sources */,
+				043419D020E3291D005AB3E1 /* WheelSection.m in Sources */,
 				22B68FA51FFB3C0800601B1A /* TOCropToolbar.m in Sources */,
 				22B68FA61FFB3C0800601B1A /* TOCropView.m in Sources */,
 				22B68FA71FFB3C0800601B1A /* TOCropViewController.m in Sources */,
