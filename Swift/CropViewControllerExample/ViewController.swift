@@ -25,27 +25,27 @@ class ViewController: UIViewController, CropViewControllerDelegate, UIImagePicke
         cropController.delegate = self
         
         // Uncomment this if you wish to provide extra instructions via a title label
-        //cropController.title = "Crop Image"
+        cropController.title = "Crop Image"
     
         // -- Uncomment these if you want to test out restoring to a previous crop setting --
-        //cropController.angle = 90 // The initial angle in which the image will be rotated
-        //cropController.imageCropFrame = CGRect(x: 0, y: 0, width: 2848, height: 4288) //The initial frame that the crop controller will have visible.
+        cropController.angle = 90 // The initial angle in which the image will be rotated
+        cropController.imageCropFrame = CGRect(x: 0, y: 0, width: 2848, height: 4288) //The initial frame that the crop controller will have visible.
     
         // -- Uncomment the following lines of code to test out the aspect ratio features --
-        //cropController.aspectRatioPreset = .presetSquare; //Set the initial aspect ratio as a square
-        //cropController.aspectRatioLockEnabled = true // The crop box is locked to the aspect ratio and can't be resized away from it
-        //cropController.resetAspectRatioEnabled = false // When tapping 'reset', the aspect ratio will NOT be reset back to default
-        //cropController.aspectRatioPickerButtonHidden = true
+        cropController.aspectRatioPreset = .presetSquare; //Set the initial aspect ratio as a square
+        cropController.aspectRatioLockEnabled = true // The crop box is locked to the aspect ratio and can't be resized away from it
+        cropController.resetAspectRatioEnabled = false // When tapping 'reset', the aspect ratio will NOT be reset back to default
+        cropController.aspectRatioPickerButtonHidden = true
     
         // -- Uncomment this line of code to place the toolbar at the top of the view controller --
-        //cropController.toolbarPosition = .top
+        cropController.toolbarPosition = .top
     
-        //cropController.rotateButtonsHidden = true
-        //cropController.rotateClockwiseButtonHidden = true
+        cropController.rotateButtonsHidden = true
+        cropController.rotateClockwiseButtonHidden = true
     
-        //cropController.doneButtonTitle = "Title"
-        //cropController.cancelButtonTitle = "Title"
-        
+        cropController.doneButtonTitle = "Title"
+        cropController.cancelButtonTitle = "Title"
+        print("~~~~~~~~~~~~~ Running the code that ruins a square crop Swift ~~~~~~~~~~~~~")
         self.image = image
         
         //If profile picture, push onto the same navigation stack

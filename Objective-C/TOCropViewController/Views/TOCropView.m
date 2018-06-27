@@ -1054,17 +1054,38 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     UIEdgeInsets edgeInsets = self.scrollView.contentInset;
     
     CGRect frame = CGRectZero;
+    CGFloat width, height, sizeForSquare; // All will be CGFloats, more convenient this way
+    
     frame.origin.x = floorf((floorf(contentOffset.x) + edgeInsets.left) * (imageSize.width / contentSize.width));
     frame.origin.x = MAX(0, frame.origin.x);
     
     frame.origin.y = floorf((floorf(contentOffset.y) + edgeInsets.top) * (imageSize.height / contentSize.height));
     frame.origin.y = MAX(0, frame.origin.y);
     
-    frame.size.width = ceilf(cropBoxFrame.size.width * (imageSize.width / contentSize.width));
-    frame.size.width = MIN(imageSize.width, frame.size.width);
+    /* Height and width are calculated independantly of each other, which can lead to ons side being longer than the other */\
     
-    frame.size.height = ceilf(cropBoxFrame.size.height * (imageSize.height / contentSize.height));
-    frame.size.height = MIN(imageSize.height, frame.size.height);
+//    frame.size.width = ceilf(cropBoxFrame.size.width * (imageSize.width / contentSize.width));
+//    frame.size.width = MIN(imageSize.width, frame.size.width);
+//
+//    frame.size.height = ceilf(cropBoxFrame.size.height * (imageSize.height / contentSize.height));
+//    frame.size.height = MIN(imageSize.height, frame.size.height);
+//    NSLog(@"Here is the width: %.2f, Here is the height: %.2f", frame.size.width ,frame.size.height); // Should be uneven
+    
+    /* Putting the width and height into 2 variables, then choosing the MIN of both values, this ensures width and height will always be the same as the smallest size becomes the default for both */
+    width = ceilf(cropBoxFrame.size.width * (imageSize.width / contentSize.width));
+    height = ceilf(cropBoxFrame.size.height * (imageSize.height / contentSize.height));
+    sizeForSquare = MIN(width, height); // Just finds the smallest side between the two choices
+    //NSLog(@"Here is the width: %.2f, Here is the height: %.2f, and here is the sizeForSquare: %.2f", width ,height, sizeForSquare);
+    
+    // If Width & Height are the same make sure it stays that way by equaling the W & H to sizeForSquare variable
+    if (cropBoxFrame.size.width == cropBoxFrame.size.height) {
+        frame.size.width = sizeForSquare;
+        frame.size.height = sizeForSquare;
+    } else {
+    // Otherwise, just get the smallest side and set for the width or height respectively
+        frame.size.width = MIN(imageSize.width, width);
+        frame.size.height = MIN(imageSize.height, height);
+    }
 
     // if frame goes beyond boundaries of the image, we move it back
     // so it is within the boundaries.
@@ -1085,7 +1106,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
         self.restoreImageCropFrame = imageCropFrame;
         return;
     }
-    
+    // Seems like this is what sets the size for the cropped image
     [self updateToImageCropFrame:imageCropFrame];
 }
 
