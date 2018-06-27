@@ -9,7 +9,7 @@
 #import "Wheel.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation Wheel
+@interface Wheel()
 
 - (void) drawWheel;
 - (float) calculateDistanceFromCenter:(CGPoint)point;
@@ -118,17 +118,15 @@ static float deltaAngle;
     //initialize new value
     CGFloat newVal = 0.0;
     //iterate through all sections
-    for (ColorWheelSection *s in sections) {
+    for (WheelSection *s in sections) {
         //check for anomly (occurs wit heven number of sections)
         if (s.minValue > 0 && s.maxValue < 0) {
             if (s.maxValue > radians || s.minValue < radians) {
                 //find the quadrant (positive or negative)
                 if (radians > 0) {
                     newVal = radians - M_PI;
-                    [self playClickSound];
                 } else {
                     newVal = M_PI + radians;
-                    [self playClickSound];
                 }
                 currentSection = s.section;
             }
@@ -137,7 +135,6 @@ static float deltaAngle;
         else if (radians > s.minValue && radians < s.maxValue) {
             newVal = radians - s.midValue;
             currentSection = s.section;
-            [self playClickSound];
         }
     }
     //set up animation for final rotation
@@ -164,7 +161,7 @@ static float deltaAngle;
     CGFloat mid = 0;
     //iterate through all sections
     for (int i = 0; i < numberOfSections; i++) {
-        ColorWheelSection *wheelSection = [[ColorWheelSection alloc] init];
+        WheelSection *wheelSection = [[WheelSection alloc] init];
         //set section values
         wheelSection.midValue = mid;
         wheelSection.minValue = mid - (fanWidth/2);

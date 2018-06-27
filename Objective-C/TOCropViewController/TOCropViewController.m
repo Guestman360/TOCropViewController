@@ -25,11 +25,12 @@
 #import "TOActivityCroppedImageProvider.h"
 #import "UIImage+CropRotate.h"
 #import "TOCroppedImageAttributes.h"
+#import "Wheel.h"
 
 static const CGFloat kTOCropViewControllerTitleTopPadding = 14.0f;
 static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 
-@interface TOCropViewController () <UIActionSheetDelegate, UIViewControllerTransitioningDelegate, TOCropViewDelegate>
+@interface TOCropViewController () <UIActionSheetDelegate, UIViewControllerTransitioningDelegate, TOCropViewDelegate, WheelProtocol>
 
 /* The target image */
 @property (nonatomic, readwrite) UIImage *image;
@@ -133,12 +134,17 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     self.toolbar.clampButtonTapped = ^{ [weakSelf showAspectRatioDialog]; };
     self.toolbar.rotateCounterclockwiseButtonTapped = ^{ [weakSelf rotateCropViewCounterclockwise]; };
     self.toolbar.rotateClockwiseButtonTapped        = ^{ [weakSelf rotateCropViewClockwise]; };
+    
+    //creates the wheel in the view, makes use of the protocol I created
+    //Wheel *wheel = [[Wheel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) andDelegate:self withSections:4];
+    
+    //[self.view addSubview:wheel];
+    //[self.view insertSubview: wheel belowSubview: _cropView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     // If we're animating onto the screen, set a flag
     // so we can manually control the status bar fade out timing
     if (animated) {
@@ -229,6 +235,12 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     // Reset the state once the view has gone offscreen
     self.inTransition = NO;
     [self setNeedsStatusBarAppearanceUpdate];
+}
+
+#pragma mark - Conforming to Wheel Protocol -
+- (void)wheelDidChangeValue:(NSString *)newValue
+{
+    NSLog(@"Value: %@", newValue);
 }
 
 #pragma mark - Status Bar -

@@ -14,7 +14,7 @@
 
 @property (nonatomic, strong) NSMutableArray *sections;
 @property int currentSection;
-@property (weak) id <WheelRotationProtocol> wheelDelegate;
+@property (weak) id <WheelProtocol> wheelDelegate;
 @property (nonatomic, strong) UIView *container;
 @property int numberOfSections;
 @property CGAffineTransform startTransform;

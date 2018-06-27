@@ -11,6 +11,16 @@
 		043419CC20E328A7005AB3E1 /* Wheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 043419CA20E328A7005AB3E1 /* Wheel.m */; };
 		043419CF20E3291D005AB3E1 /* WheelSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 043419CD20E3291D005AB3E1 /* WheelSection.h */; };
 		043419D020E3291D005AB3E1 /* WheelSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 043419CE20E3291D005AB3E1 /* WheelSection.m */; };
+		043419D120E33838005AB3E1 /* WheelProtocol.h in Sources */ = {isa = PBXBuildFile; fileRef = 04D63DF920E324C0003E5B95 /* WheelProtocol.h */; };
+		043419D220E33838005AB3E1 /* Wheel.h in Sources */ = {isa = PBXBuildFile; fileRef = 043419C920E328A7005AB3E1 /* Wheel.h */; };
+		043419D320E33838005AB3E1 /* Wheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 043419CA20E328A7005AB3E1 /* Wheel.m */; };
+		043419D420E33838005AB3E1 /* WheelSection.h in Sources */ = {isa = PBXBuildFile; fileRef = 043419CD20E3291D005AB3E1 /* WheelSection.h */; };
+		043419D520E33838005AB3E1 /* WheelSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 043419CE20E3291D005AB3E1 /* WheelSection.m */; };
+		043419D620E33850005AB3E1 /* WheelProtocol.h in Sources */ = {isa = PBXBuildFile; fileRef = 04D63DF920E324C0003E5B95 /* WheelProtocol.h */; };
+		043419D720E33850005AB3E1 /* Wheel.h in Sources */ = {isa = PBXBuildFile; fileRef = 043419C920E328A7005AB3E1 /* Wheel.h */; };
+		043419D820E33850005AB3E1 /* Wheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 043419CA20E328A7005AB3E1 /* Wheel.m */; };
+		043419D920E33850005AB3E1 /* WheelSection.h in Sources */ = {isa = PBXBuildFile; fileRef = 043419CD20E3291D005AB3E1 /* WheelSection.h */; };
+		043419DA20E33850005AB3E1 /* WheelSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 043419CE20E3291D005AB3E1 /* WheelSection.m */; };
 		144B8CD11D22CD650085D774 /* TOCropViewControllerTransitioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB4D891B234D07008B8466 /* TOCropViewControllerTransitioning.h */; };
 		144B8CD21D22CD650085D774 /* TOActivityCroppedImageProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 22DB4D9C1B234D4F008B8466 /* TOActivityCroppedImageProvider.h */; };
 		144B8CD31D22CD650085D774 /* TOCroppedImageAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BF961E1B2CD017009F4785 /* TOCroppedImageAttributes.h */; };
@@ -727,6 +737,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043419D120E33838005AB3E1 /* WheelProtocol.h in Sources */,
+				043419D220E33838005AB3E1 /* Wheel.h in Sources */,
+				043419D320E33838005AB3E1 /* Wheel.m in Sources */,
+				043419D420E33838005AB3E1 /* WheelSection.h in Sources */,
+				043419D520E33838005AB3E1 /* WheelSection.m in Sources */,
 				22DB4D971B234D07008B8466 /* UIImage+CropRotate.m in Sources */,
 				22DB4D9B1B234D07008B8466 /* TOCropView.m in Sources */,
 				223424761ABBC0CD00BBC2B1 /* ViewController.m in Sources */,
@@ -784,6 +799,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043419D620E33850005AB3E1 /* WheelProtocol.h in Sources */,
+				043419D720E33850005AB3E1 /* Wheel.h in Sources */,
+				043419D820E33850005AB3E1 /* Wheel.m in Sources */,
+				043419D920E33850005AB3E1 /* WheelSection.h in Sources */,
+				043419DA20E33850005AB3E1 /* WheelSection.m in Sources */,
 				2236AB4A1F595960005C5098 /* ShareViewController.m in Sources */,
 				2F5062EE1F53E31F00AA9F14 /* UIImage+CropRotate.m in Sources */,
 				2F5062EC1F53E31F00AA9F14 /* TOActivityCroppedImageProvider.m in Sources */,

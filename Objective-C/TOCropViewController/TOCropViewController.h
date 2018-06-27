@@ -24,6 +24,7 @@
 
 #import "TOCropView.h"
 #import "TOCropToolbar.h"
+#import "WheelProtocol.h"
 
 /* Preset values of the most common aspect ratios that can be used to quickly configure
    the crop view controller. */
@@ -95,7 +96,7 @@ typedef NS_ENUM(NSInteger, TOCropViewControllerToolbarPosition) {
 
 @end
 
-@interface TOCropViewController : UIViewController
+@interface TOCropViewController : UIViewController<WheelProtocol>
 
 /**
  The original, uncropped image that was passed to this controller.
