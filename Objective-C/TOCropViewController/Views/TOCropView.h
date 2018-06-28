@@ -21,6 +21,7 @@
 //  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "WheelProtocol.h"
 
 @class TOCropOverlayView;
 
@@ -38,7 +39,7 @@ typedef NS_ENUM(NSInteger, TOCropViewCroppingStyle) {
 
 @end
 
-@interface TOCropView : UIView
+@interface TOCropView : UIView<WheelProtocol>
 
 /**
  The image that the crop view is displaying. This cannot be changed once the crop view is instantiated.

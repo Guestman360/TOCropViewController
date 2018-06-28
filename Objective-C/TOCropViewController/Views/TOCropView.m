@@ -23,6 +23,7 @@
 #import "TOCropView.h"
 #import "TOCropOverlayView.h"
 #import "TOCropScrollView.h"
+#import "Wheel.h"
 
 #define TOCROPVIEW_BACKGROUND_COLOR [UIColor colorWithWhite:0.12f alpha:1.0f]
 
@@ -45,7 +46,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     TOCropViewOverlayEdgeLeft
 };
 
-@interface TOCropView () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
+@interface TOCropView () <UIScrollViewDelegate, UIGestureRecognizerDelegate, WheelProtocol>
 
 @property (nonatomic, strong, readwrite) UIImage *image;
 @property (nonatomic, assign, readwrite) TOCropViewCroppingStyle croppingStyle;
@@ -269,9 +270,19 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
         self.restoreImageCropFrame = CGRectZero;
     }
     
+    Wheel *wheel = [[Wheel alloc] initWithFrame:CGRectMake(0, 30, self.frame.size.width, self.frame.size.height) andDelegate:self withSections:360];
+    [self addSubview:wheel];
+    
     //Check if we performed any resetabble modifications
     [self checkForCanReset];
 }
+
+#pragma mark - Conforming to Wheel Protocol -
+- (void)wheelDidChangeValue:(NSString *)newValue
+{
+    NSLog(@"Value: %@", newValue);
+}
+
 
 - (void)layoutInitialImage
 {

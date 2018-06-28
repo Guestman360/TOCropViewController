@@ -121,6 +121,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     // Layout the views initially
     self.cropView.frame = [self frameForCropViewWithVerticalLayout:self.verticalLayout];
     self.toolbar.frame = [self frameForToolbarWithVerticalLayout:self.verticalLayout];
+    //self.cropView.layer.masksToBounds = YES; // added
 
     // Set up toolbar default behaviour
     self.toolbar.clampButtonHidden = self.aspectRatioPickerButtonHidden || circularMode;
@@ -136,10 +137,14 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     self.toolbar.rotateClockwiseButtonTapped        = ^{ [weakSelf rotateCropViewClockwise]; };
     
     //creates the wheel in the view, makes use of the protocol I created
-    //Wheel *wheel = [[Wheel alloc] initWithFrame:CGRectMake(0, 0, self.image.size.width, self.image.size.height) andDelegate:self withSections:360];
+    //Wheel *wheel = [[Wheel alloc] initWithFrame:CGRectMake(0, 30, self.cropView.frame.size.width, self.cropView.frame.size.height) andDelegate:self withSections:360];
+    //wheel.layer.masksToBounds = YES;
+    //wheel.clipsToBounds = YES;
+    //[self.cropView addSubview:wheel];
+    //UIView * gridView = (UIView *)self.cropView.gridOverlayView;
+    //gridView.layer.masksToBounds = YES;
     
-    //[self.image addSubview:wheel];
-    //[self.view insertSubview: wheel belowSubview: self.cropView]; // iimagecropframe?
+    //[self.cropView insertSubview: wheel belowSubview: gridView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
