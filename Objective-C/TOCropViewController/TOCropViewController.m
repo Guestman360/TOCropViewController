@@ -136,10 +136,10 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     self.toolbar.rotateClockwiseButtonTapped        = ^{ [weakSelf rotateCropViewClockwise]; };
     
     //creates the wheel in the view, makes use of the protocol I created
-    //Wheel *wheel = [[Wheel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) andDelegate:self withSections:4];
+    //Wheel *wheel = [[Wheel alloc] initWithFrame:CGRectMake(0, 0, self.image.size.width, self.image.size.height) andDelegate:self withSections:360];
     
-    //[self.view addSubview:wheel];
-    //[self.view insertSubview: wheel belowSubview: _cropView];
+    //[self.image addSubview:wheel];
+    //[self.view insertSubview: wheel belowSubview: self.cropView]; // iimagecropframe?
 }
 
 - (void)viewWillAppear:(BOOL)animated

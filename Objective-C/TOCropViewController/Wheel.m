@@ -42,7 +42,7 @@ static float deltaAngle;
     CGFloat radius = (self.container.frame.size.width)/2;
     
     //Array of colors declared here
-    NSMutableArray *colorsArray = [[NSMutableArray alloc] initWithObjects:[UIColor blueColor],[UIColor greenColor],[UIColor redColor],[UIColor purpleColor], nil];
+    //NSMutableArray *colorsArray = [[NSMutableArray alloc] initWithObjects:[UIColor blueColor],[UIColor greenColor],[UIColor redColor],[UIColor purpleColor], nil];
     
     //for loop responsible for creating the sections of the circle
     for (int i = 0; i < numberOfSections; i++) {
@@ -53,9 +53,10 @@ static float deltaAngle;
         
         //creates a slice in wheel, adds color from array
         CAShapeLayer *slice = [CAShapeLayer layer];
-        UIColor *color;
-        color = [colorsArray objectAtIndex:i];
-        slice.fillColor = color.CGColor;
+        // Instead of the colors add a number label?
+        //UIColor *color;
+        //color = [colorsArray objectAtIndex:i];
+        slice.fillColor = UIColor.cyanColor.CGColor;
         
         UIBezierPath *circlePath = [UIBezierPath bezierPath];
         [circlePath moveToPoint:centerOne];
