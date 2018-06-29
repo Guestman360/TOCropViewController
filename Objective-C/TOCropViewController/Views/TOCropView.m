@@ -271,7 +271,8 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     }
     
     Wheel *wheel = [[Wheel alloc] initWithFrame:CGRectMake(0, 30, self.frame.size.width, self.frame.size.height) andDelegate:self withSections:360];
-    [self addSubview:wheel];
+    [self insertSubview: wheel belowSubview: self.scrollView];
+    //[self addSubview:wheel];
     
     //Check if we performed any resetabble modifications
     [self checkForCanReset];

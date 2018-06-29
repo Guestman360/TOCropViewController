@@ -58,6 +58,9 @@ static float deltaAngle;
         //color = [colorsArray objectAtIndex:i];
         slice.fillColor = UIColor.cyanColor.CGColor;
         
+        // Customize slice
+        
+        
         UIBezierPath *circlePath = [UIBezierPath bezierPath];
         [circlePath moveToPoint:centerOne];
         [circlePath addLineToPoint:CGPointMake(centerOne.x + radius * cosf(startingAngle), centerOne.y + radius * sinf(startingAngle))];
